@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Url2Ringtone", "Url2Ringtone\Url2Ringtone.csproj", "{24DB7CD0-EE35-4A57-8A0C-6FADE92AB941}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Marketplace", "Marketplace", "{C4D5CCF4-4C3A-4A40-8265-25867BA2497F}"
+	ProjectSection(SolutionItems) = preProject
+		Url2Ringtone\Resources\ReadMe.de.resx = Url2Ringtone\Resources\ReadMe.de.resx
+		Url2Ringtone\Resources\ReadMe.es.resx = Url2Ringtone\Resources\ReadMe.es.resx
+		Url2Ringtone\Resources\ReadMe.fr.resx = Url2Ringtone\Resources\ReadMe.fr.resx
+		Url2Ringtone\Resources\ReadMe.it.resx = Url2Ringtone\Resources\ReadMe.it.resx
+		Url2Ringtone\Resources\ReadMe.nl.resx = Url2Ringtone\Resources\ReadMe.nl.resx
+		Url2Ringtone\Resources\ReadMe.resx = Url2Ringtone\Resources\ReadMe.resx
+		Url2Ringtone\Resources\ReadMe.zh-CN.resx = Url2Ringtone\Resources\ReadMe.zh-CN.resx
+		Url2Ringtone\Resources\ReadMe.zh-TW.resx = Url2Ringtone\Resources\ReadMe.zh-TW.resx
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24DB7CD0-EE35-4A57-8A0C-6FADE92AB941}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24DB7CD0-EE35-4A57-8A0C-6FADE92AB941}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24DB7CD0-EE35-4A57-8A0C-6FADE92AB941}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{24DB7CD0-EE35-4A57-8A0C-6FADE92AB941}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24DB7CD0-EE35-4A57-8A0C-6FADE92AB941}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24DB7CD0-EE35-4A57-8A0C-6FADE92AB941}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

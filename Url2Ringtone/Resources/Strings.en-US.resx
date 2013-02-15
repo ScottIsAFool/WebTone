@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Add" xml:space="preserve">
+    <value>add</value>
+  </data>
+  <data name="AddFavourite" xml:space="preserve">
+    <value>add favorite</value>
+  </data>
+  <data name="AutoPlayHeader" xml:space="preserve">
+    <value>autoplay downloaded content</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>browse</value>
+  </data>
+  <data name="BrowserBack" xml:space="preserve">
+    <value>back</value>
+  </data>
+  <data name="BrowserForward" xml:space="preserve">
+    <value>forward</value>
+  </data>
+  <data name="BrowserRefresh" xml:space="preserve">
+    <value>refresh</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>cancel</value>
+  </data>
+  <data name="CheckingLink" xml:space="preserve">
+    <value>checking link...</value>
+  </data>
+  <data name="CheckLinks" xml:space="preserve">
+    <value>check links</value>
+  </data>
+  <data name="ClearLocalFiles" xml:space="preserve">
+    <value>clear locally stored files</value>
+  </data>
+  <data name="ClearLocalFilesText" xml:space="preserve">
+    <value>are you sure you wish to remove locally held mp3/wma files? this cannot be undone.\n\nthis will not clear the history</value>
+  </data>
+  <data name="ClearLocalFilesTitle" xml:space="preserve">
+    <value>are you sure?</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>delete</value>
+  </data>
+  <data name="DeleteFavouritesText" xml:space="preserve">
+    <value>Are you sure you want to delete these favorites?</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>display name</value>
+  </data>
+  <data name="DisplayNameHint" xml:space="preserve">
+    <value>enter display name here</value>
+  </data>
+  <data name="DontCheckLinks" xml:space="preserve">
+    <value>don't check links</value>
+  </data>
+  <data name="Downloading" xml:space="preserve">
+    <value>downloading file...</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>edit</value>
+  </data>
+  <data name="EditFavourite" xml:space="preserve">
+    <value>edit favorite</value>
+  </data>
+  <data name="EmailMe" xml:space="preserve">
+    <value>email me</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>error</value>
+  </data>
+  <data name="Favourites" xml:space="preserve">
+    <value>favorites</value>
+  </data>
+  <data name="FeedbackSubject" xml:space="preserve">
+    <value>WebTone Feedback</value>
+  </data>
+  <data name="FileFoundText" xml:space="preserve">
+    <value>We have found an audio file that you clicked on, would you like to download that file now?</value>
+  </data>
+  <data name="FileFoundTitle" xml:space="preserve">
+    <value>Audio File Found</value>
+  </data>
+  <data name="FileSizeError" xml:space="preserve">
+    <value>File size too big, audio must be less than 1mb</value>
+  </data>
+  <data name="FileTypeError" xml:space="preserve">
+    <value>This file type isn't supported</value>
+  </data>
+  <data name="FileTypeText" xml:space="preserve">
+    <value>We couldn't determine what sort of file this is, is it a WMA or MP3?</value>
+  </data>
+  <data name="FileTypeTitle" xml:space="preserve">
+    <value>what file type?</value>
+  </data>
+  <data name="GraphicsBy" xml:space="preserve">
+    <value>Graphics by </value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>information</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>loading...</value>
+  </data>
+  <data name="MySite" xml:space="preserve">
+    <value>my site</value>
+  </data>
+  <data name="MyTwitter" xml:space="preserve">
+    <value>my twitter</value>
+  </data>
+  <data name="NameHint" xml:space="preserve">
+    <value>ringtone name</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>no</value>
+  </data>
+  <data name="NoItems" xml:space="preserve">
+    <value>There are no items in the history</value>
+  </data>
+  <data name="NoNetworkConnectionError" xml:space="preserve">
+    <value>No network connection available</value>
+  </data>
+  <data name="NotificationBoxText" xml:space="preserve">
+    <value>This app also uses the brilliant NotificationBox by </value>
+  </data>
+  <data name="Pause" xml:space="preserve">
+    <value>pause</value>
+  </data>
+  <data name="PauseMusicText" xml:space="preserve">
+    <value>Would you like us to pause your music for you? It will start up when the ringtone isn't playing.\n\nIf you don't want to see this prompt again, you can turn it off in the settings.</value>
+  </data>
+  <data name="PauseMusicTitle" xml:space="preserve">
+    <value>pause music?</value>
+  </data>
+  <data name="PauseNotification" xml:space="preserve">
+    <value>We will pause any music you were listening to if turned on</value>
+  </data>
+  <data name="PivotAbout" xml:space="preserve">
+    <value>about</value>
+  </data>
+  <data name="PivotHistory" xml:space="preserve">
+    <value>history</value>
+  </data>
+  <data name="PivotRingtone" xml:space="preserve">
+    <value>ringtone</value>
+  </data>
+  <data name="Play" xml:space="preserve">
+    <value>play</value>
+  </data>
+  <data name="RateApp" xml:space="preserve">
+    <value>rate app</value>
+  </data>
+  <data name="RingtoneInstructions" xml:space="preserve">
+    <value>Enter the link for the mp3/wma file you want as the ringtone. It must be less than 1mb and the track less than 40 seconds. Once downloaded, give the ringtone a name, then add it to your list of ringtones.</value>
+  </data>
+  <data name="RingtoneKey" xml:space="preserve">
+    <value>denotes ringtone file is saved locally</value>
+  </data>
+  <data name="RingtoneName" xml:space="preserve">
+    <value>ringtone name</value>
+  </data>
+  <data name="RingtoneSize" xml:space="preserve">
+    <value>ringtone size: </value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>save</value>
+  </data>
+  <data name="SaveRingtoneLocally" xml:space="preserve">
+    <value>save ringtone locally</value>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>select</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>settings</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>url</value>
+  </data>
+  <data name="UrlFavouriteHint" xml:space="preserve">
+    <value>enter url here</value>
+  </data>
+  <data name="UrlHint" xml:space="preserve">
+    <value>enter ringtone url</value>
+  </data>
+  <data name="UseSmartBrowsing" xml:space="preserve">
+    <value>use 'smart' browsing</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>yes</value>
+  </data>
+  <data name="Recent" xml:space="preserve">
+    <value>recent</value>
+  </data>
+  <data name="DeleteHistoryText" xml:space="preserve">
+    <value>Are you sure you'd like to delete your recently visited sites?</value>
+  </data>
+</root>

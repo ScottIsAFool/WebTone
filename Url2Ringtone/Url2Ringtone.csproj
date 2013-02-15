@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{24DB7CD0-EE35-4A57-8A0C-6FADE92AB941}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Url2Ringtone</RootNamespace>
+    <AssemblyName>WebTone</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>fr;it;nl;es;zh-TW;zh-CN;zh-HK;de</SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>WebTone.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>Url2Ringtone.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AdDuplex.AdControl.Silverlight">
+      <HintPath>.\AdDuplex.AdControl.Silverlight.dll</HintPath>
+    </Reference>
+    <Reference Include="AdRotator">
+      <HintPath>..\packages\AdRotator\AdRotator.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras.WP71, Version=3.0.0.32981, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmLight.3.0.3\lib\sl4-windowsphone71\GalaSoft.MvvmLight.Extras.WP71.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.WP71, Version=3.0.0.32981, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmLight.3.0.3\lib\sl4-windowsphone71\GalaSoft.MvvmLight.WP71.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HTMLAgilityPack\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone" />
+    <Reference Include="Microsoft.Phone.Controls" />
+    <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SilverlightToolkitWP.4.2011.11.15\lib\sl4-windowsphone71\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone.Interop" />
+    <Reference Include="Microsoft.Xna.Framework" />
+    <Reference Include="Phone7.Fx, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Phone7.Fx\Phone7.Fx.dll</HintPath>
+    </Reference>
+    <Reference Include="ScottIsAFool.WindowsPhone">
+      <HintPath>..\packages\ScottIsAFool.WindowsPhone\ScottIsAFool.WindowsPhone.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Interactivity, Version=3.8.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLight.3.0.3\lib\sl4-windowsphone71\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="mscorlib.extensions" />
+    <Reference Include="Tomers.Phone.Controls">
+      <HintPath>..\packages\Tomers.NotificationBox\Tomers.Phone.Controls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Behaviours\OnTextPropertyChangedBehaviour.cs" />
+    <Compile Include="Controls\FullWebBrowser.xaml.cs">
+      <DependentUpon>FullWebBrowser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanielVaughan\ArgumentValidator.cs" />
+    <Compile Include="DanielVaughan\ProgressIndicatorProxy.cs" />
+    <Compile Include="DanielVaughan\VisualTree.cs" />
+    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="ViewModels\HistoryItem.cs" />
+    <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="Views\AddEditFavourite.xaml.cs">
+      <DependentUpon>AddEditFavourite.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Browser.xaml.cs">
+      <DependentUpon>Browser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Favourites.xaml.cs">
+      <DependentUpon>Favourites.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\History.xaml.cs">
+      <DependentUpon>History.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\LabelsManager.cs" />
+    <Compile Include="Resources\Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\BrowserViewModel.cs" />
+    <Compile Include="ViewModels\FavouriteItem.cs" />
+    <Compile Include="ViewModels\RingtoneItem.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="Controls\FullWebBrowser.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AddEditFavourite.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Browser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Favourites.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\History.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <DesignData Include="SampleData\MainViewModelSampleData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </DesignData>
+    <DesignData Include="SampleData\BrowserViewModelSampleData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </DesignData>
+    <Page Include="Views\Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Thumbs.db" />
+    <None Include="Toolkit.Content\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdRotatorSupporterFile.xml" />
+    <Content Include="ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Background.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\appbar.add.rest.png" />
+    <Content Include="Icons\appbar.back.rest.png" />
+    <Content Include="Icons\appbar.cancel.rest.png" />
+    <Content Include="Icons\appbar.close.rest.png" />
+    <Content Include="Icons\appbar.delete.rest.png" />
+    <Content Include="Icons\appbar.download.rest.png" />
+    <Content Include="Icons\appbar.edit.rest.png" />
+    <Content Include="Icons\appbar.favs.addto.rest.png" />
+    <Content Include="Icons\appbar.favs.rest.png" />
+    <Content Include="Icons\appbar.ie.rest.png" />
+    <Content Include="Icons\appbar.manage.rest.png" />
+    <Content Include="Icons\appbar.next.rest.png" />
+    <Content Include="Icons\appbar.refresh.rest.png" />
+    <Content Include="Icons\appbar.save.rest.dark.png" />
+    <Content Include="Icons\appbar.save.rest.light.png" />
+    <Content Include="Icons\appbar.save.rest.png" />
+    <Content Include="Icons\appbar.saveringtone.rest.png" />
+    <Content Include="Icons\appbar.transport.pause.rest.png" />
+    <Content Include="Icons\appbar.transport.play.rest.png" />
+    <Content Include="Icons\clearboxicon.png" />
+    <Content Include="Icons\downloadringtone.dark.png" />
+    <Content Include="Icons\downloadringtone.light.png" />
+    <Content Include="Icons\saveringtone.dark.png" />
+    <Content Include="Icons\saveringtone.light.png" />
+    <Content Include="README.txt" />
+    <Content Include="README_FIRST.txt" />
+    <Content Include="SplashScreenImage.jpg" />
+    <Resource Include="Toolkit.Content\ApplicationBar.Cancel.png" />
+    <Resource Include="Toolkit.Content\ApplicationBar.Check.png" />
+    <Resource Include="Toolkit.Content\ApplicationBar.Delete.png" />
+    <Resource Include="Toolkit.Content\ApplicationBar.Select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Strings.de.resx" />
+    <EmbeddedResource Include="Resources\Strings.en-US.resx" />
+    <EmbeddedResource Include="Resources\Strings.es.resx" />
+    <EmbeddedResource Include="Resources\Strings.fr.resx" />
+    <EmbeddedResource Include="Resources\Strings.it.resx" />
+    <EmbeddedResource Include="Resources\Strings.nl.resx" />
+    <EmbeddedResource Include="Resources\Strings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Strings.zh-CN.resx" />
+    <EmbeddedResource Include="Resources\Strings.zh-HK.resx" />
+    <EmbeddedResource Include="Resources\Strings.zh-TW.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+</Project>

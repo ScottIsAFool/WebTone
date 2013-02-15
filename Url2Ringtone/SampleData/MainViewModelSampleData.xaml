@@ -1,0 +1,21 @@
+﻿<local:MainViewModel 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"       
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Url2Ringtone" >
+    
+    <local:MainViewModel.Items>
+        <local:RingtoneItem OriginalUrl="http://bit.ly/nyancatmp3" IsStoredLocally="True" RingtoneName="nyancat"/>
+    </local:MainViewModel.Items>
+	
+	<local:MainViewModel.IsDataLoaded>
+		True
+	</local:MainViewModel.IsDataLoaded>
+	
+	<local:MainViewModel.IsDarkTheme>
+		True
+	</local:MainViewModel.IsDarkTheme>
+    
+	<local:MainViewModel.AutoPlay>
+		True
+	</local:MainViewModel.AutoPlay>
+</local:MainViewModel>
