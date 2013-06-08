@@ -259,23 +259,7 @@
                             Margin="0,0,0,-25"/>
 				</Grid>
 			</controls:PivotItem>
-    	</controls:Pivot>
-        <!--<adduplex:AdControl AppId="2951" 
-                            IsTest="False" 
-                            Margin="0,5,8,0" 
-                            d:LayoutOverrides="HorizontalMargin" 
-                            VerticalAlignment="Bottom" 
-                            BackgroundOpacity="0"/>-->
-        <adRotator:AdRotatorControl x:Name="adRotatorControl"
-                                    SettingsUrl="http://dev.scottisafool.co.uk/files/wp7/AdRotatorSupporterFile.xml"
-                                    DefaultAdType="PubCenter"
-                                    DefaultSettingsFileUri="/WebTone;component/AdRotatorSupporterFile.xml"
-                                    AdDuplexAppId="2951"
-                                    PubCenterAdUnitId="10027004"
-                                    PubCenterAppId="0e79c4c8-5c19-45e2-88ff-3eedc5b0831c"
-                                    Width="480"
-                                    Height="80"
-                                    VerticalAlignment="Bottom"/>                                    
+    	</controls:Pivot>                                    
                                     
         <scott:ErrorBox x:Name="errorMessageBox" 
                         VerticalAlignment="Top" 
