@@ -1,27 +1,14 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 using System.Net;
-using System.Linq;
 using System.IO.IsolatedStorage;
 using System.IO;
+using Microsoft.Phone.Controls;
 using Microsoft.Phone.Net.NetworkInformation;
-using Microsoft.Phone.Shell;
 using ScottIsAFool.WindowsPhone.IsolatedStorage;
 using Url2Ringtone.Resources;
-using Tomers.Phone.Controls;
-using System.Text.RegularExpressions;
 
 namespace Url2Ringtone
 {
@@ -196,34 +183,45 @@ namespace Url2Ringtone
                     {
                         Deployment.Current.Dispatcher.BeginInvoke(() =>
                         {
-                            NotificationBox.Show(Strings.FileTypeTitle, Strings.FileTypeText,
-                                                 new NotificationBoxCommand("wma", () =>
-                                                 {
-                                                     CurrentItem.FileExtension = ".wma";
-                                                     DoDownload();
-                                                 }),
-                                                 new NotificationBoxCommand("mp3", () =>
-                                                 {
-                                                     CurrentItem.FileExtension = ".mp3";
-                                                     DoDownload();
-                                                 }),
-                                                 new NotificationBoxCommand(Strings.Cancel, () =>
-                                                 {
-                                                     DownloadingMP3 = false;
-                                                     IsDataLoaded = true;
-                                                     IsIndeterminate = false;
-                                                 }));
+                            var messageBox = new CustomMessageBox
+                            {
+                                Title = Strings.FileTypeTitle,
+                                Message = Strings.FileTypeText,
+                                LeftButtonContent = ".wma",
+                                RightButtonContent = ".mp3"
+                            };
+                            messageBox.Dismissed += (sender, args) =>
+                            {
+                                switch (args.Result)
+                                {
+                                    case CustomMessageBoxResult.LeftButton:
+                                        CurrentItem.FileExtension = ".wma";
+                                        DoDownload();
+                                        break;
+                                    case CustomMessageBoxResult.RightButton:
+                                        CurrentItem.FileExtension = ".mp3";
+                                        DoDownload();
+                                        break;
+                                    case CustomMessageBoxResult.None:
+                                        DownloadingMP3 = false;
+                                        IsDataLoaded = true;
+                                        IsIndeterminate = false;
+                                        break;
+                                }
+                            };
+                            messageBox.Show();
                         });
                     }
                 }
             }
             catch (WebException ex)
             {
-                Deployment.Current.Dispatcher.BeginInvoke(() => {
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
                     DownloadingMP3 = false;
                     IsDataLoaded = true;
                     IsIndeterminate = false;
-                    SetError(ex.Message, Strings.Error); 
+                    SetError(ex.Message, Strings.Error);
                 });
             }
         }
@@ -237,7 +235,7 @@ namespace Url2Ringtone
                 ProgressChanged = 0;
             });
             downloadMP3Client = new WebClient();
-            
+
             downloadMP3Client.DownloadProgressChanged += new DownloadProgressChangedEventHandler(downloadMP3Client_DownloadProgressChanged);
             downloadMP3Client.OpenReadCompleted += new OpenReadCompletedEventHandler(downloadMP3Client_OpenReadCompleted);
             downloadMP3Client.OpenReadAsync(FinalUrl);

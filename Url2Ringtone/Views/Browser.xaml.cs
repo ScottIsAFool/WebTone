@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using Microsoft.Phone.Controls;
 using System.Windows.Navigation;
 using System.Net;
 using System.Windows.Controls;
 using Url2Ringtone.ViewModel;
-using HtmlAgilityPack;
-using System.Linq;
 using System.Windows;
-using Tomers.Phone.Controls;
 using Url2Ringtone.Resources;
 
 namespace Url2Ringtone
@@ -147,15 +143,22 @@ namespace Url2Ringtone
 
         private void AskToDownloadFile(Uri uri)
         {
-            NotificationBox.Show(Strings.FileFoundTitle, Strings.FileFoundText,
-                                                 new NotificationBoxCommand(Strings.Yes, () =>
-                                                 {
-                                                     App.BrowserModel.AudioFileFound(uri, fullBrowser.GetCookies());
-                                                 }),
-                                                 new NotificationBoxCommand(Strings.No, () =>
-                                                 {
+            var messageBox = new CustomMessageBox
+            {
+                Title = Strings.FileFoundTitle,
+                Message = Strings.FileFoundText,
+                LeftButtonContent = Strings.Yes,
+                RightButtonContent = Strings.No
+            };
 
-                                                 }));
+            messageBox.Dismissed += (sender, args) =>
+            {
+                if (args.Result == CustomMessageBoxResult.LeftButton)
+                {
+                    App.BrowserModel.AudioFileFound(uri, fullBrowser.GetCookies());
+                }
+            };
+            messageBox.Show();
         }
 
         private void btnSmartBrowsing_Click(object sender, EventArgs e)
