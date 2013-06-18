@@ -75,7 +75,7 @@
         
         <phonefx:BindableApplicationBar IsVisible="True">
             <phonefx:BindableApplicationBar.Buttons>
-                <phonefx:BindableApplicationBarIconButton Text="{Binding Source={StaticResource StringsManager}, Path=Strings.Delete, Mode=OneTime}"
+                <behaviors:ApplicationBarIconButton Text="{Binding Source={StaticResource StringsManager}, Path=Strings.Delete, Mode=OneTime}"
 														  IconUri="/Icons/appbar.delete.rest.png"
 														  x:Name="btnDelete"
                                                           IsEnabled="{Binding History.Count,
@@ -85,7 +85,7 @@
                             <command:EventToCommand Command="{Binding Source={StaticResource Locator}, Path=BrowserViewModel.HistoryDeleteCommand}"/>
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
-                </phonefx:BindableApplicationBarIconButton>
+                </behaviors:ApplicationBarIconButton>
             </phonefx:BindableApplicationBar.Buttons>
         </phonefx:BindableApplicationBar>
     </Grid>

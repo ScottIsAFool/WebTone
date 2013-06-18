@@ -88,7 +88,7 @@
         
         <phonefx:BindableApplicationBar IsVisible="True">
             <phonefx:BindableApplicationBar.Buttons>
-                <phonefx:BindableApplicationBarIconButton Text="{Binding Source={StaticResource StringsManager}, Path=Strings.Add, Mode=OneTime}" 
+                <behaviors:ApplicationBarIconButton Text="{Binding Source={StaticResource StringsManager}, Path=Strings.Add, Mode=OneTime}" 
                                                           IconUri="/Icons/appbar.add.rest.png"
                                                           x:Name="btnAdd">
                     <i:Interaction.Triggers>
@@ -96,8 +96,8 @@
                             <Command:EventToCommand Command="{Binding AddFavouriteCommand}"/>
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
-                </phonefx:BindableApplicationBarIconButton>
-                <phonefx:BindableApplicationBarIconButton Text="{Binding Source={StaticResource StringsManager}, Path=Strings.Delete, Mode=OneTime}" 
+                </behaviors:ApplicationBarIconButton>
+                <behaviors:ApplicationBarIconButton Text="{Binding Source={StaticResource StringsManager}, Path=Strings.Delete, Mode=OneTime}" 
                                                           IconUri="/Icons/appbar.delete.rest.png"
                                                           x:Name="btnDelete"
                                                           IsEnabled="{Binding NumberOfItemsSelected,
@@ -108,8 +108,8 @@
                                                     CommandParameter="{Binding ElementName=lbFavourites, Path=SelectedItems}"/>
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
-                </phonefx:BindableApplicationBarIconButton>
-                <phonefx:BindableApplicationBarIconButton Text="{Binding Source={StaticResource StringsManager}, Path=Strings.Edit, Mode=OneTime}" 
+                </behaviors:ApplicationBarIconButton>
+                <behaviors:ApplicationBarIconButton Text="{Binding Source={StaticResource StringsManager}, Path=Strings.Edit, Mode=OneTime}" 
                                                           IconUri="/Icons/appbar.edit.rest.png"
                                                           x:Name="btnEdit"
                                                           Click="btnEdit_Click"
