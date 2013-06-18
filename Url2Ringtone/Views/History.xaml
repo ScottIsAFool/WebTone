@@ -1,92 +1,104 @@
-﻿<phone:PhoneApplicationPage 
-    x:Class="Url2Ringtone.Views.History"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
-    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
-    xmlns:phonefx="clr-namespace:Phone7.Fx.Controls;assembly=Phone7.Fx"
-    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
-    xmlns:command="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras.WP71"
-    FontFamily="{StaticResource PhoneFontFamilyNormal}"
-    FontSize="{StaticResource PhoneFontSizeNormal}"
-    Foreground="{StaticResource PhoneForegroundBrush}"
-    SupportedOrientations="Portrait" Orientation="Portrait"
-    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
-    shell:SystemTray.IsVisible="True"
-    d:DataContext="{d:DesignData ../SampleData/BrowserViewModelSampleData.xaml}"
-    DataContext="{Binding Source={StaticResource Locator}, Path=BrowserViewModel}">
+﻿<phone:PhoneApplicationPage x:Class="Url2Ringtone.Views.History"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+                            xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+                            xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+                            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                            xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+                            xmlns:command="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras.WP8"
+                            xmlns:behaviors="clr-namespace:Cimbalino.Phone.Toolkit.Behaviors;assembly=Cimbalino.Phone.Toolkit"
+                            FontFamily="{StaticResource PhoneFontFamilyNormal}"
+                            FontSize="{StaticResource PhoneFontSizeNormal}"
+                            Foreground="{StaticResource PhoneForegroundBrush}"
+                            SupportedOrientations="Portrait"
+                            Orientation="Portrait"
+                            mc:Ignorable="d"
+                            d:DesignHeight="768"
+                            d:DesignWidth="480"
+                            shell:SystemTray.IsVisible="True"
+                            d:DataContext="{d:DesignData ../SampleData/BrowserViewModelSampleData.xaml}"
+                            DataContext="{Binding Source={StaticResource Locator}, Path=BrowserViewModel}">
 
     <toolkit:TransitionService.NavigationInTransition>
         <toolkit:NavigationInTransition>
             <toolkit:NavigationInTransition.Backward>
-                <toolkit:SwivelTransition Mode="BackwardIn"/>
+                <toolkit:SwivelTransition Mode="BackwardIn" />
             </toolkit:NavigationInTransition.Backward>
             <toolkit:NavigationInTransition.Forward>
-                <toolkit:SwivelTransition Mode="ForwardIn"/>
+                <toolkit:SwivelTransition Mode="ForwardIn" />
             </toolkit:NavigationInTransition.Forward>
         </toolkit:NavigationInTransition>
     </toolkit:TransitionService.NavigationInTransition>
     <toolkit:TransitionService.NavigationOutTransition>
         <toolkit:NavigationOutTransition>
             <toolkit:NavigationOutTransition.Backward>
-                <toolkit:SwivelTransition Mode="BackwardOut"/>
+                <toolkit:SwivelTransition Mode="BackwardOut" />
             </toolkit:NavigationOutTransition.Backward>
             <toolkit:NavigationOutTransition.Forward>
-                <toolkit:SwivelTransition Mode="ForwardOut"/>
+                <toolkit:SwivelTransition Mode="ForwardOut" />
             </toolkit:NavigationOutTransition.Forward>
         </toolkit:NavigationOutTransition>
     </toolkit:TransitionService.NavigationOutTransition>
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot"
+          Background="Transparent">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
+        <i:Interaction.Behaviors>
+            <behaviors:ApplicationBarBehavior IsVisible="True">
+                <behaviors:ApplicationBarIconButton Text="{Binding Source={StaticResource StringsManager}, Path=Strings.Delete, Mode=OneTime}"
+                                                    IconUri="/Icons/appbar.delete.rest.png"
+                                                    x:Name="btnDelete"
+                                                    IsEnabled="{Binding History.Count,
+                                                                      Converter={StaticResource CountToEnabled}, ConverterParameter=delete}"
+                                                    Command="{Binding Source={StaticResource Locator}, Path=BrowserViewModel.HistoryDeleteCommand}" />
+            </behaviors:ApplicationBarBehavior>
+        </i:Interaction.Behaviors>
+
         <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock x:Name="ApplicationTitle" Text="{StaticResource AppName}" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock x:Name="PageTitle" Text="{Binding Source={StaticResource StringsManager}, Path=Strings.Recent, Mode=OneTime}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        <StackPanel x:Name="TitlePanel"
+                    Grid.Row="0"
+                    Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle"
+                       Text="{StaticResource AppName}"
+                       Style="{StaticResource PhoneTextNormalStyle}" />
+            <TextBlock x:Name="PageTitle"
+                       Text="{Binding Source={StaticResource StringsManager}, Path=Strings.Recent, Mode=OneTime}"
+                       Margin="9,-7,0,0"
+                       Style="{StaticResource PhoneTextTitle1Style}" />
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <ListBox ItemsSource="{Binding History}">                
+        <Grid x:Name="ContentPanel"
+              Grid.Row="1"
+              Margin="12,0,12,0">
+            <ListBox ItemsSource="{Binding History}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Orientation="Vertical" Margin="0,10,0,16">
+                        <StackPanel Orientation="Vertical"
+                                    Margin="0,10,0,16">
                             <i:Interaction.Triggers>
                                 <i:EventTrigger EventName="SelectionChanged">
                                     <command:EventToCommand Command="{Binding Source={StaticResource Locator}, Path=BrowserViewModel.HistoryItemTappedCommand}"
-                                                CommandParameter="{Binding Url}"/>
+                                                            CommandParameter="{Binding Url}" />
                                 </i:EventTrigger>
                             </i:Interaction.Triggers>
-                            <TextBlock Text="{Binding Title}" Style="{StaticResource PhoneTextLargeStyle}"/>
-							<TextBlock Text="{Binding Url}" Style="{StaticResource PhoneTextSubtleStyle}"/>
-						</StackPanel>
+                            <TextBlock Text="{Binding Title}"
+                                       Style="{StaticResource PhoneTextLargeStyle}" />
+                            <TextBlock Text="{Binding Url}"
+                                       Style="{StaticResource PhoneTextSubtleStyle}" />
+                        </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
         </Grid>
-        
-        <phonefx:BindableApplicationBar IsVisible="True">
-            <phonefx:BindableApplicationBar.Buttons>
-                <behaviors:ApplicationBarIconButton Text="{Binding Source={StaticResource StringsManager}, Path=Strings.Delete, Mode=OneTime}"
-														  IconUri="/Icons/appbar.delete.rest.png"
-														  x:Name="btnDelete"
-                                                          IsEnabled="{Binding History.Count,
-                                                                      Converter={StaticResource CountToEnabled}, ConverterParameter=delete}">
-                    <i:Interaction.Triggers>
-                        <i:EventTrigger EventName="Click">
-                            <command:EventToCommand Command="{Binding Source={StaticResource Locator}, Path=BrowserViewModel.HistoryDeleteCommand}"/>
-                        </i:EventTrigger>
-                    </i:Interaction.Triggers>
-                </behaviors:ApplicationBarIconButton>
-            </phonefx:BindableApplicationBar.Buttons>
-        </phonefx:BindableApplicationBar>
+
+
     </Grid>
 </phone:PhoneApplicationPage>

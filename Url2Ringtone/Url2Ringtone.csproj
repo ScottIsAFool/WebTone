@@ -104,16 +104,8 @@
     <Reference Include="Cimbalino.Phone.Toolkit.Background">
       <HintPath>..\packages\Cimbalino.Phone.Toolkit.Background.3.0.0\lib\wp8\Cimbalino.Phone.Toolkit.Background.dll</HintPath>
     </Reference>
-    <Reference Include="GalaSoft.MvvmLight.Extras.WP71, Version=3.0.0.32981, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\MvvmLight.3.0.3\lib\sl4-windowsphone71\GalaSoft.MvvmLight.Extras.WP71.dll</HintPath>
-    </Reference>
     <Reference Include="GalaSoft.MvvmLight.Extras.WP8">
       <HintPath>..\packages\MvvmLightLibs.4.1.27.0\lib\WindowsPhone8\GalaSoft.MvvmLight.Extras.WP8.dll</HintPath>
-    </Reference>
-    <Reference Include="GalaSoft.MvvmLight.WP71, Version=3.0.0.32981, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\MvvmLight.3.0.3\lib\sl4-windowsphone71\GalaSoft.MvvmLight.WP71.dll</HintPath>
     </Reference>
     <Reference Include="GalaSoft.MvvmLight.WP8">
       <HintPath>..\packages\MvvmLightLibs.4.1.27.0\lib\WindowsPhone8\GalaSoft.MvvmLight.WP8.dll</HintPath>
