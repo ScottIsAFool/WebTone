@@ -220,7 +220,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AdRotatorSupporterFile.xml" />
     <Content Include="ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -243,11 +242,10 @@
     <Content Include="Icons\appbar.favs.rest.png" />
     <Content Include="Icons\appbar.next.rest.png" />
     <Content Include="Icons\appbar.refresh.rest.png" />
-    <Content Include="Icons\appbar.save.rest.light.png" />
+    <Content Include="Icons\appbar.save.rest.png" />
     <Content Include="Icons\appbar.transport.pause.png" />
     <Content Include="Icons\appbar.transport.play.png" />
     <Content Include="README.txt" />
-    <Content Include="README_FIRST.txt" />
     <Content Include="SplashScreenImage.jpg" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
