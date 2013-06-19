@@ -6,19 +6,19 @@
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone" 
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone" 
     xmlns:converters="clr-namespace:ScottIsAFool.WindowsPhone.Converters;assembly=ScottIsAFool.WindowsPhone"
-    xmlns:System="clr-namespace:System;assembly=mscorlib" 
-    xmlns:ThisApp="clr-namespace:Url2Ringtone" 
-    xmlns:Resources="clr-namespace:Url2Ringtone.Resources" 
+    xmlns:system="clr-namespace:System;assembly=mscorlib" 
+    xmlns:thisApp="clr-namespace:Url2Ringtone" 
+    xmlns:resources="clr-namespace:Url2Ringtone.Resources" 
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
     xmlns:vm="clr-namespace:Url2Ringtone.ViewModel" mc:Ignorable="d">
   <!--Application Resources-->
   <Application.Resources>
     <ResourceDictionary>
-            <ThisApp:MainViewModel x:Key="viewModel" />
-            <ThisApp:BrowserViewModel x:Key="browserViewModel" />
-            <Resources:StringsManager x:Key="StringsManager" />
-            <System:String x:Key="AppName">WEBTONE</System:String>
+            <thisApp:MainViewModel x:Key="viewModel" />
+            <thisApp:BrowserViewModel x:Key="browserViewModel" />
+            <resources:StringsManager x:Key="StringsManager" />
+            <system:String x:Key="AppName">WEBTONE</system:String>
             <converters:InvertBoolean x:Key="InvertBoolean" />
             <converters:LengthToBool x:Key="LengthToBool" />
             <converters:InvertedVisibilityConverter x:Key="InvertedVisibilityConverter" />
@@ -30,7 +30,7 @@
             <converters:VisibilityConverter x:Key="VisibilityConverter" />
             <converters:IntToVisibilityConverter x:Key="IntToVisibilityConverter" />
             <converters:CountToEnabled x:Key="CountToEnabled"/>
-            <System:Double x:Key="PhoneFontSizeAlmostLarge">45</System:Double>
+            <system:Double x:Key="PhoneFontSizeAlmostLarge">45</system:Double>
             <Style x:Key="PhoneTextAlmostLargeStyle" TargetType="TextBlock" BasedOn="{StaticResource PhoneTextBlockBase}">
                 <Setter Property="FontFamily" Value="{StaticResource PhoneFontFamilySemiLight}" />
                 <Setter Property="FontSize" Value="{StaticResource PhoneFontSizeAlmostLarge}" />

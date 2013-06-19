@@ -105,11 +105,16 @@
                                     Width="48">
                                 <Button.Template>
                                     <ControlTemplate>
-                                        <Image Height="48"
-                                               Width="48"
-                                               Source="{Binding IsDarkTheme, Converter={StaticResource ImageUrlConverter}, ConverterParameter=downloadringtone}" />
+                                        <Ellipse Fill="{StaticResource PhoneForegroundBrush}"
+                                                 Height="48"
+                                                 Width="48">
+                                            <Ellipse.OpacityMask>
+                                                <ImageBrush ImageSource="/Icons/appbar.download.rest.png"/>
+                                            </Ellipse.OpacityMask>
+                                        </Ellipse>
                                     </ControlTemplate>
                                 </Button.Template>
+                                
                             </Button>
                         </StackPanel>
                     </StackPanel>
@@ -223,29 +228,26 @@
                                    VerticalAlignment="Top"
                                    HorizontalAlignment="Left"
                                    Margin="8,8,0,0"
-                                   Text="WebTone © ScottIsAFool (@scottisafool) 2011 Version 1.1.0" />
+                                   Text="WebTone © ScottIsAFool (@scottisafool) 2013 Version 2.0.0" />
                         <StackPanel Orientation="Horizontal">
                             <Button x:Name="btnEmail"
                                     Content="{Binding Source={StaticResource StringsManager}, Path=Strings.EmailMe, Mode=OneTime}"
                                     HorizontalAlignment="Left"
-                                    Margin="14,0,0,0"
                                     VerticalAlignment="Top"
-                                    Width="207"
+                                    Width="230"
                                     d:LayoutOverrides="HorizontalAlignment"
                                     Click="btnEmail_Click" />
                             <Button x:Name="btnTwitter"
                                     Content="{Binding Source={StaticResource StringsManager}, Path=Strings.MyTwitter, Mode=OneTime}"
-                                    Margin="0,0,14,0"
                                     VerticalAlignment="Top"
                                     HorizontalAlignment="Right"
                                     Click="btnTwitter_Click"
-                                    Width="207" />
+                                    Width="230" />
                         </StackPanel>
                         <Button x:Name="btnWebsite"
                                 Content="{Binding Source={StaticResource StringsManager}, Path=Strings.MySite, Mode=OneTime}"
                                 VerticalAlignment="Top"
-                                Margin="14,0,0,0"
-                                Width="207"
+                                Width="230"
                                 HorizontalAlignment="Left"
                                 Click="btnWebsite_Click" />
                         <RichTextBox Width="420"
@@ -255,16 +257,7 @@
                                 <Hyperlink x:Name="linkMike"
                                            Click="linkMike_Click">Mike Hilton</Hyperlink>
                             </Paragraph>
-                            <Paragraph>
-                                <Run Text="{Binding Source={StaticResource StringsManager}, Path=Strings.NotificationBoxText, Mode=OneTime}" />
-                                <Hyperlink x:Name="linkTomer"
-                                           Click="linkTomer_Click">Tomer Shamam</Hyperlink>
-                            </Paragraph>
                             <Paragraph />
-                            <Paragraph>
-                                <Hyperlink x:Name="linkBlog"
-                                           Click="linkBlog_Click">http://webtoneapp.wordpress.com</Hyperlink>
-                            </Paragraph>
                         </RichTextBox>
                     </StackPanel>
                     <Button x:Name="btnRate"
