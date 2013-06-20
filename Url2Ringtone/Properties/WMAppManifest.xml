@@ -14,7 +14,6 @@
   <App xmlns="" ProductID="{3bbe602f-39a6-41d2-8d76-0457d5ee8306}" Title="WebTone" RuntimeType="Silverlight" Version="2.0.0.0" Genre="apps.normal" Author="ScottIsAFool" Description="Sample description" Publisher="ScottLovegrove" PublisherID="{e52ee5a4-4a3b-4903-82de-9e1919d80559}">
     <IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
     <Capabilities>
-      <Capability Name="ID_CAP_GAMERSERVICES" />
       <Capability Name="ID_CAP_IDENTITY_DEVICE" />
       <Capability Name="ID_CAP_IDENTITY_USER" />
       <Capability Name="ID_CAP_LOCATION" />
