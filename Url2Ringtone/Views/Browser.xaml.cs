@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Microsoft.Phone.Controls;
 using System.Windows.Navigation;
 using System.Net;
@@ -96,7 +97,7 @@ namespace Url2Ringtone
 
         }
 
-        private void CheckForContentType(Uri uri)
+        private async Task CheckForContentType(Uri uri)
         {
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create(uri);
             if (App.ViewModel.Cookies != null)
@@ -108,37 +109,34 @@ namespace Url2Ringtone
                 }
                 catch (Exception ex) { }
             }
-            req.BeginGetResponse((result) =>
+            var task = req.GetResponseAsync();
+            try
             {
-                try
-                {
-                    HttpWebResponse res = (HttpWebResponse)req.EndGetResponse(result);
-                    if (res.ContentType.StartsWith("audio"))
-                    {
-                        Deployment.Current.Dispatcher.BeginInvoke(() =>
-                        {
-                            fullBrowser.ShowProgress = false;
-                            AskToDownloadFile(res.ResponseUri);                            
-                        });
-                    }
-                    //else
-                    //{
-                    //    Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    //    {
-                    //        fullBrowser.Navigate(uri.ToString());
-                    //    });
-                    //    HasCheckedForContentType = true;
-                    //}
-                }
-                catch (Exception ex)
+                HttpWebResponse res = (HttpWebResponse) await task.ConfigureAwait(false);
+                if (res.ContentType.StartsWith("audio"))
                 {
                     Deployment.Current.Dispatcher.BeginInvoke(() =>
+                        {
+                            fullBrowser.ShowProgress = false;
+                            AskToDownloadFile(res.ResponseUri);
+                        });
+                }
+                //else
+                //{
+                //    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                //    {
+                //        fullBrowser.Navigate(uri.ToString());
+                //    });
+                //    HasCheckedForContentType = true;
+                //}
+            }
+            catch (Exception ex)
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
                     {
                         fullBrowser.ShowProgress = false;
                     });
-                }
-
-            }, req);
+            }
         }
 
         private void AskToDownloadFile(Uri uri)
