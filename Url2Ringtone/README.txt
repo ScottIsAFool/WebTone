@@ -1,4 +1,4 @@
-﻿WebTone v1.5.0
+﻿WebTone v1.5.2
 
 WHAT'S NEW
 
