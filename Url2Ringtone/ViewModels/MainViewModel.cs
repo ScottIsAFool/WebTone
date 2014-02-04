@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Collections.ObjectModel;
 using System.Net;
@@ -134,7 +135,7 @@ namespace Url2Ringtone
 
         internal CookieCollection Cookies { get; set; }
 
-        public void DownloadMP3()
+        public async Task DownloadMP3()
         {
             if (IsNetworkEnabled)
             {
@@ -155,7 +156,8 @@ namespace Url2Ringtone
                         }
                         catch (Exception ex) { }
                     }
-                    request.BeginGetResponse(new AsyncCallback(GetData), request);
+                    var task = request.GetResponseAsync();
+                    await GetData(task, request);
                 }
             }
             else
@@ -164,12 +166,11 @@ namespace Url2Ringtone
             }
         }
 
-        private void GetData(IAsyncResult result)
+        private async Task GetData(Task<WebResponse> task, HttpWebRequest request)
         {
             try
             {
-                HttpWebRequest request = (HttpWebRequest)result.AsyncState;
-                HttpWebResponse response = (HttpWebResponse)request.EndGetResponse(result);
+                HttpWebResponse response = (HttpWebResponse) await task.ConfigureAwait(false);
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                     FinalUrl = response.ResponseUri;
